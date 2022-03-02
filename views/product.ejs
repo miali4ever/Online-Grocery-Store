@@ -1,0 +1,133 @@
+<%- include('./partials/header') %>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <img src="<%= image %>" class="product-image" alt="<%= name %>">
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title" name="product_name" value="<%= product_id %>"><%= name %></h3>
+        <hr>
+        <h5 class="product-detail-title">Product details</h5>
+        <p class="product-detail-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea commodo consequat. Duis aute irure dolor in reprehenderit in
+          voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum.
+        </p>
+
+        <h5 class="product_amount" value="<%= amount %>"> (Only <span id="totalAmount"></span> left)</h5>
+
+        <hr />
+
+
+        <form action="/all-products/<%= product_id %>" method="post">
+          <button type="button" class="sub" data-target="product">−</button>
+          <input type="number" value="0" class="field_product" name="quantity"/>
+          <button type="button" class="add" data-target="product">+</button>
+          <input type="submit" value="confirm"/>
+          <!-- <input type="submit" value="accept"/><br><br><hr> -->
+        </form>
+
+        <p class="display_product" name="price" value="<%= price %>">&#36; <%= price %> <%= unit%></p>
+
+        <hr />
+
+
+        <h4>Total: &#36; <span id="totalValue"></span></h4>
+        <a href="/cart/<%= product_id %>" type="button" class="btn btn-light">Add to Cart</a>
+        <a href="/product/checkout" type="button" class="btn btn-secondary">Check Out</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+<script>
+  var subElm = document.querySelectorAll('.sub')
+  var addElm = document.querySelectorAll('.add')
+  var totalValueElm = document.getElementById('totalValue')
+
+  var price_query = document.querySelector('.display_product')
+  var price = Number(price_query.getAttribute('value'))
+
+  //get amount part
+  var amount_query = document.querySelector('.product_amount')
+  var totalAmountElm = document.getElementById('totalAmount')
+  totalAmountElm.innerText = + amount_query.getAttribute('value');
+  //end
+
+
+  for(var i=0; i < subElm.length; i++) {
+    subElm[i].addEventListener('click', function() {
+      var targetItem = this.getAttribute('data-target')
+      var inputElm = document.querySelector('.field_' + targetItem)
+
+
+      //get amount part
+      var amount_query = document.querySelector('.product_amount')
+      var totalAmountElm = document.getElementById('totalAmount')
+      //end
+
+      var currentValue = +inputElm.getAttribute('value')
+
+        if(currentValue !== 0) {
+          var incValue = currentValue - 1
+          inputElm.setAttribute('value', incValue)
+          totalValueElm.innerText = Math.round(incValue*price*100)/100
+
+          //get amount part
+          var amount = + amount_query.getAttribute('value')
+          var newAmount = amount + 1
+          amount_query.setAttribute('value', newAmount)
+          totalAmountElm.innerText = newAmount
+          //end
+
+        }
+      })
+
+    addElm[i].addEventListener('click', function() {
+      var targetItem = this.getAttribute('data-target')
+      var inputElm = document.querySelector('.field_' + targetItem)
+
+      //get amount part
+      var amount_query = document.querySelector('.product_amount')
+      var amount = amount_query.getAttribute('value')
+      var totalAmountElm = document.getElementById('totalAmount')
+      //end
+
+      var currentValue = +inputElm.getAttribute('value')
+      var incValue = currentValue + 1
+      inputElm.setAttribute('value', incValue)
+
+      totalValueElm.innerText = Math.round(incValue*price*100)/100
+
+
+      //get amount part
+      var newAmount = amount-1
+      amount_query.setAttribute('value', newAmount)
+      totalAmountElm.innerText = newAmount;
+
+      //end
+      })
+
+  }
+
+</script>
+
+
+
+
+<%- include('./partials/footer') %>

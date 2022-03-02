@@ -1,16 +1,185 @@
 
 body {
-  background-color: #E8ECEF;
-}
-
-.centered {
-    padding-top: 200px;
-    text-align: center;
-}
-
-.secret-text {
   text-align: center;
-  font-size: 2rem;
-  color: #fff;
-  background-color: #000;
+}
+
+
+/* section{
+  height:100vh;
+} */
+
+/* .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+} */
+/****************************Navbar***********************************/
+.navbar {
+    width:100%;
+    background-color:#92A9BD;
+    margin-bottom:20px;
+}
+
+.navbar-nav li a{
+  display:inline;
+  margin:0px;
+  padding-left:15px;
+  padding-right:15px;
+
+  font-size:20px;
+  color:#313552;
+  letter-spacing: 0px;
+
+}
+
+.navbar-nav li a:hover {
+    color: #6867AC !important;
+    text-decoration: none;
+}
+
+
+/***************************************************/
+
+/*********************Carousel******************************/
+.carousel-section{
+  background-color: #C3DBD9;
+
+}
+.carousel-item a{
+  text-decoration-color: #000000;
+  font-size: 20px;
+}
+.carousel-item a:hover {
+    text-decoration: none;
+}
+.testimonial-image {
+  width: 25%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.btn .btn-secondary{
+  margin:30px;
+  padding:20px;
+
+}
+/*********************Features******************************/
+.feature .title{
+  margin-top:25px;
+  margin-bottom: 25px;
+}
+
+.feature-section {
+  background-color: #fff;
+}
+
+#features {
+  position: relative;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 4.5%;
+}
+.icon {
+  color: #7C99AC;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #92A9BD;
+}
+/****************************Home Page Card**********************************/
+.category-section{
+  background-color: #C3DBD9;
+
+}
+
+.card .card-img-top {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+.card-deck .card{
+  margin-top:0px;
+  margin-left: 1px;
+  margin-right: 1px;
+
+}
+
+/**/
+/***************************************************/
+.form-group{
+  text-align:left;
+}
+
+/*********************product page******************************/
+.product-image{
+  width: 80%;
+  border-radius: 100%;
+  margin: 20px;
+  align-content: center;
+
+}
+
+/************************Product page***************************/
+.product-detail-title{
+  text-align: left;
+}
+.product-detail-description{
+  text-align: left;
+}
+.product_amount{
+  text-align: left;
+}
+/**********************Check out page*****************************/
+#checkout{
+  text-align: left;
+  margin-bottom: 3px;
+}
+.col-12{
+  margin:3px;
+}
+.col-md-4{
+  margin:3px auto;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+
+/**********************Footer*****************************/
+.footer-padding {
+	padding-bottom: 40px;
+}
+
+.footer {
+	position: relative;
+  bottom: 0px;
+	text-align: center;
+	width: 100%;
+	height: 60px;
+	background-color: #C3DBD9;
+
+}
+
+.footer-p {
+  text-align: center;
+	margin-top:10px;
+  padding: 30px auto;
+	font-size: 20px;
+  color: #000000;
 }

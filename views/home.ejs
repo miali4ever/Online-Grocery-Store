@@ -1,16 +1,130 @@
 <%- include('partials/header') %>
 
 
-<div class="jumbotron centered">
-  <div class="container">
-    <i class="fas fa-key fa-6x"></i>
-    <h1 class="display-3">Secrets</h1>
-    <p class="lead">Don't keep your secrets, share them anonymously!</p>
-    <hr>
-    <a class="btn btn-light btn-lg" href="/register" role="button">Register</a>
-    <a class="btn btn-dark btn-lg" href="/login" role="button">Login</a>
+<!-- Carousel -->
+<section class="carousel-section" id="testimonials">
+
+  <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active container-fluid">
+        <img class="testimonial-image" src="/img/Banana.jpg" alt="banana-profile"><br />
+        <a type="button" class="btn btn-secondary" href="/all-products/banana">
+          Find out more ></a>
+      </div>
+
+      <div class="carousel-item container-fluid">
+        <img class="testimonial-image" src="/img/Beef_Rib_Finger.jpg" alt="Beef _Rib_Finger-profile"><br />
+        <a type="button" class="btn btn-secondary" href="/all-products/beefribfinger">
+          Find out more ></a>
+      </div>
+
+      <div class="carousel-item container-fluid">
+        <img class="testimonial-image" src="/img/Chives.jpg" alt="Chives"><br />
+        <a type="button" class="btn btn-secondary" href="/all-products/chives">
+          Find out more ></a>
+      </div>
+
+    </div>
+
+    <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+</section>
+
+
+
+
+<!-- Features -->
+
+
+<section class="feature-section" id="features">
+
+  <div>
+    <h1 class="feature title">Welcome to Frist Choice Groceries</h2>
+  </div>
+
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="feature-box col-lg-4">
+        <i class="icon fas fa-check-circle fa-4x"></i>
+        <h3 class="feature-title">Easy to buy.</h3>
+        <p>So easy to buy, we are happy to make your day.</p>
+      </div>
+
+      <div class="feature-box col-lg-4">
+        <i class="icon fas fa-bullseye fa-4x"></i>
+        <h3 class="feature-title">Elite Clientele</h3>
+        <p>We have the fresh food and you save the money.</p>
+      </div>
+
+      <div class="feature-box col-lg-4">
+        <i class="icon fas fa-heart fa-4x"></i>
+        <h3 class="feature-title">Fresh Guaranteed.</h3>
+        <p>Find your favorite food or get your money back.</p>
+      </div>
+    </div>
+
 
   </div>
-</div>
+</section>
+
+
+<section class="category-section" id="category">
+  <div>
+    <h1 id="Fruits">Check out what we offer to you</h1>
+  </div>
+
+  <div class="card-deck">
+
+    <article class="card">
+      <div class="card-title">
+        <h4>Fruits</h4>
+      </div>
+
+      <img class="card-img-top" src="/img/fruits.jpg" alt="Fruits">
+      <div class="card-body">
+        <a href="/fruits"> View all ></a>
+      </div>
+
+    </article>
+
+    <article class="card">
+      <div class="card-title">
+        <h4>Vegetable</h4>
+      </div>
+      <img class="card-img-top" src="/img/vegetable.jpg" alt="Vegetable">
+      <div class="card-body">
+        <a href="/vegetable"> View all ></a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-title">
+        <h4>Meat</h4>
+      </div>
+      <img class="card-img-top" src="/img/meat.jpg" alt="Meat">
+      <div class="card-body">
+        <a href="/meat"> View all ></a>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="mymodule.js" charset="utf-8"></script>
 
 <%- include('partials/footer') %>

@@ -1,0 +1,44 @@
+<%- include('./partials/header') %>
+
+<h1 class="cart-title">Shopping Cart</h1>
+
+<!-- res.render("cart",{shoppingCarts:carts}); -->
+<!-- const cart ={
+  count: cart_count
+  name:product.name,
+  unit:product.unit,
+  quantity:quantity,
+  price:product.price
+  subtotal: product.price*quantity} -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Itam Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% shoppingCarts.forEach(function(cart){%>
+    <tr>
+      <th scope="row"><%= cart.count %></th>
+      <td><%= cart.name %></td>
+      <td>&#36;<%= cart.price %> <%= cart.unit %></td>
+      <td><%= cart.quantity%></td>
+      <td class="subValue" value="<%= cart.subtotal %>"> &#36; <%= cart.subtotal%></td>
+    </tr>
+          <% })%>
+
+    <tr>
+      <td colspan="2">Total price: </td>
+      <td colspan="3">&#36; <%= total %></td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+<a href="/checkout" type="button" class="btn btn-secondary">Check Out</a>
